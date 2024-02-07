@@ -1,0 +1,107 @@
+body#mainPage{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.50),
+        rgba(0,0,0,0.50)),
+        url("Images/Forest.jpg");
+    margin:0; /* To make no space between bar and page */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+     z-index: -1; /* sending back */
+}
+
+/* CSS to place the logo on the left side of the navigation bar */
+#logo{
+    overflow:hidden;
+    position:absolute;
+
+    top: 0px; 
+    left:20px;
+    height:70px;
+
+    cursor: pointer;
+}
+
+/* To create the navigation bar and make it fixed to the top */
+.naviBar{
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    display: inline;
+
+    top: 0; /* Position the navbar at the top of the page */
+    width: 98%; /* Full width */
+    
+    border-bottom: 2px solid #95df1d;
+
+    background-color:transparent;
+	backdrop-filter: blur(10px);
+
+    text-align: right;
+    padding: 18px;
+    
+    z-index: 999;
+}
+
+/* To change the look of the links on the navigation bar */
+.naviBar a{
+    color: white;
+    text-decoration: none;
+
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* Creating a hover effect to the links */
+.naviBar a:hover{
+    color:#95df1d;
+    border-bottom: 2px solid;
+    border-color:#95df1d;
+    cursor: pointer;
+}
+
+#question{
+    color: aqua;
+}
+
+/* CSS for the rating star system */
+#questionsDiv{
+    text-align: center;
+    margin-top: 250px;
+
+    display: flex; 
+    flex-direction: row; 
+}
+
+
+
+/* To align the stars to the center */
+#questionsDivContent{
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(60, 176, 176);
+}
+
+
+.header {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.question {
+    margin-bottom: 20px;
+}
+

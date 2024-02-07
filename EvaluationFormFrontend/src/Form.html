@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="StyleSheet.css">
+
+        <title>Evaluation Form</title>
+    </head>
+
+    <body id="formStartPage">
+        <!-- Creating the navigation bar -->
+        <header>
+            <div class="naviBar">
+
+                <img src="#" alt="Logo" id="logo" onclick='window.location.href="#"'>
+                <a id="home" href="#">Home</a>
+                <a id="predictDisorder" href="#">Predict Disorder</a>
+                <a id="evaluationForm" href="HomePage.html">Evaluation Form</a>
+                <a id="exercises" href="#">Exercise</a>
+                <a id="videoChat" href="#">Video Chat</a>
+                <a id="about" href="#">About us</a>
+
+            </div>
+        </header>        
+
+        <form>
+
+            <div id="questionsDiv">
+                <div id="questionsDivContent">
+
+                    <div id="question">
+                        <!-- <label id="question"> Hello this a text </label><br>  -->
+                    </div>
+
+                    <div id="answer">
+                        <input type="radio" id="zero" name="questions" value="0">
+                        <label for="zero">0</label>
+    
+                        <input type="radio" id="one" name="questions" value="1">
+                        <label for="one">1</label>
+    
+                        <input type="radio" id="two" name="questions" value="2">
+                        <label for="two">2</label>
+    
+                        <input type="radio" id="three" name="questions" value="3">
+                        <label for="three">3</label>
+    
+                        <input type="radio" id="four" name="questions" value="4">
+                        <label for="four">4</label><br>
+                    </div>                   
+                    
+                    <button type="button" id="start">Start</button>
+                    
+                    <button type="button" id="back">Back</button>
+
+                    <button type="button" id="nextButton">Next</button>
+                    
+                    <!-- <button id="nextButton">Next</button> -->
+
+                </div>              
+            </div>      
+
+        </form>      
+    </body>
+
+    <script>
+        const questions = [
+        "1. What is the capital of France?",
+        "2. Who is the president of the United States?",
+        "3. What is the largest planet in our solar system?"
+        ];
+
+        const answers = [];
+        let currentQuestion = 0;
+
+        const startButton = document.getElementById("start");
+        const backButton = document.getElementById("back");
+        const submitButton = document.getElementById("nextButton");
+        const questionElement = document.getElementById("question");
+        const answerElement = document.getElementById("answer");
+
+        startButton.addEventListener("click", () => {
+        questionElement.textContent = questions[currentQuestion];
+        if (answers[currentQuestion]) {
+            answerElement.value = answers[currentQuestion];
+        }
+        });
+
+        backButton.addEventListener("click", () => {
+        if (answers[currentQuestion - 1]) {
+            answerElement.value = answers[currentQuestion - 1];
+        }
+
+        currentQuestion--;
+        if (currentQuestion < 0) {
+            currentQuestion = 0;
+        }
+
+        questionElement.textContent = questions[currentQuestion];
+        });
+
+        submitButton.addEventListener("click", () => {
+        answers[currentQuestion] = answerElement.value;
+        currentQuestion++;
+        if (currentQuestion >= questions.length) {
+            currentQuestion = 0;
+
+            
+        }
+
+        questionElement.textContent = questions[currentQuestion];
+        answerElement.value = "";
+        
+        answerElement.reset();
+
+        });
+    </script>
+</html>
