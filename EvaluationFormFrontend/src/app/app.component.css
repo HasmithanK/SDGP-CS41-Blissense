@@ -1,0 +1,74 @@
+/* CSS to place the logo on the left side of the navigation bar */
+#logo{
+    overflow:hidden;
+    position:relative;
+
+    top: 0px; 
+    height:45px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+
+/* Creating the navigation bar */
+/* ----------------------------------------------------------- */
+
+#navBar {
+	position: fixed;
+    
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
+
+	background-color: transparent;
+    border-bottom: 2px solid;
+    border-color: #001c31;
+	
+	padding: 0 20px;
+	box-sizing: border-box;
+
+	z-index: 999;
+}
+
+#navBar img {
+	height: 40px;
+}
+
+#navBar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+#navBar li {
+    font-size: 16px;
+}
+
+#navBar li:first-child {
+	margin-left: 0;
+}
+
+#navBar a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 10px;
+    
+    padding: 10px 15px;
+    color: #001c31;
+	text-decoration: none;
+}
+
+#navBar a:hover {
+	color: #ffffff;
+    background-color: #001c31;
+    
+}

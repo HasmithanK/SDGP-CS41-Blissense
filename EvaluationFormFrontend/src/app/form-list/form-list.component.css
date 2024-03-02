@@ -1,0 +1,66 @@
+/* Creating a container to hold the forms */
+.formDiv{
+    /* position: relative; */
+
+    display: flex;
+
+    height: 300px;
+    width: 1000px;
+
+    border-radius: 25px;
+
+    background-color: rgb(255, 255, 255);
+    
+    justify-content: center;
+    align-items: center;
+
+    /* top: 40%;
+    left:50%;
+    transform: translate(-50%, -50%);  */
+}
+
+.formDiv a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* CSS to create boxes to align next to each other */
+.formBox{
+    position: relative;
+
+    margin: 15px;
+
+    height: 150px;
+    width: 150px;
+
+    border: 2px solid;
+    border-radius: 25px;
+    border-color: #39b2da;
+
+    background-color: #39b2da;
+
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.formBox:hover{
+    transform:scale(1.10);
+}
+
+.formBox img{
+    max-width: 100%;
+
+    border: 2px solid;
+    border-radius: 25px;
+    border-color: #7a9d41;
+    background-color: transparent;
+}
+
+.formBox p{
+    margin-top: 42%;
+
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 18px;
+}
