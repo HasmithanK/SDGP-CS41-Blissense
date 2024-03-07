@@ -24,6 +24,61 @@ import { RouterModule } from '@angular/router';
 
         </div>
 
+        <div id="introContent">
+          <h1><b>Why does your mental health matter?</b></h1>
+          
+          <p>
+          Mental health is important because 
+          it affects our overall well-being and 
+          quality of life. It includes our emotional, 
+          psychological, and social well-being. 
+          It affects how we think, feel, and act.
+          </p>
+          <button type="button">Read more</button>
+
+        </div>
+
+        <div id="introContent">
+          <h1><b>Why does your mental health matter?</b></h1>
+          
+          <p>
+          Mental health is important because 
+          it affects our overall well-being and 
+          quality of life. It includes our emotional, 
+          psychological, and social well-being. 
+          It affects how we think, feel, and act.
+          </p>
+          <button type="button">Read more</button>
+
+        </div>
+
+        <div id="introContent">
+          <h1><b>Why does your mental health matter?</b></h1>
+          
+          <p>
+          Mental health is important because 
+          it affects our overall well-being and 
+          quality of life. It includes our emotional, 
+          psychological, and social well-being. 
+          It affects how we think, feel, and act.
+          </p>
+          <button type="button">Read more</button>
+
+        </div>
+
+        <div id="introContent">
+          <h1><b>Why does your mental health matter?</b></h1>
+          
+          <p>
+          Mental health is important because 
+          it affects our overall well-being and 
+          quality of life. It includes our emotional, 
+          psychological, and social well-being. 
+          It affects how we think, feel, and act.
+          </p>
+          <button type="button">Read more</button>
+
+        </div>
       </div>
 
       <div id="predictDisoderContent">

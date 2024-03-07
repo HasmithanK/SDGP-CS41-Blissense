@@ -13,25 +13,28 @@ import { FormService } from '../form.service';
 
             <a id="PHQ9" (click)="getFormNum(1)" routerLink='selectedform'>       
                 <div class="formBox">
-                    <p>PHQ-9</p> 
+                    <p>PHQ-9</p>
+                    <!-- <div class="hidden-content">
+                        <p>This content expands when hovering</p>
+                    </div>  -->
                 </div>
             </a>
 
-            <a id="DASS" (click)="getFormNum(2)" routerLink='selectedform'> 
+            <a id="GAD" (click)="getFormNum(2)" routerLink='selectedform'>
                 <div class="formBox">
-                    <p>DASS</p>
+                    <p>GAD-7</p>
                 </div>
             </a>
 
-            <a id="GAD" (click)="getFormNum(3)" routerLink='selectedform'>
+            <a id="DASS" (click)="getFormNum(3)" routerLink='selectedform'> 
                 <div class="formBox">
-                    <p>GAD</p>
+                    <p>MSI-BPD</p>
                 </div>
             </a>
 
             <a id="Form" (click)="getFormNum(4)" routerLink='selectedform'> 
                 <div class="formBox">
-                    <p>Form</p> 
+                    <p>PANSS</p> 
                 </div>
             </a>
 

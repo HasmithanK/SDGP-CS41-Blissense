@@ -119,11 +119,11 @@ button:not([disabled]):hover {
 
     gap: 10px;
 }
-  
+
 input[type="radio"] {
     display: none; /* Hiding the dots */
 }
-  
+
 #answer label {
     display: inline-block;
 
@@ -148,9 +148,11 @@ input[type="radio"]:checked + label {
     color: #e7b1b1;
 }
 
-
-
 #questionNavButtonDiv Button{
     margin: 30px 60px;
     padding: 8px 10px;
+}
+
+#answerBox {
+    color: black;
 }

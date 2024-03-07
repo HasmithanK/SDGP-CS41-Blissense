@@ -27,7 +27,10 @@
 	right: 0;
 	height: 60px;
 
-	background-color: transparent;
+	background-color:transparent;
+	-webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); /* For most other browsers */
+	
     border-bottom: 2px solid;
     border-color: #001c31;
 	
@@ -71,4 +74,9 @@
 	color: #ffffff;
     background-color: #001c31;
     
+}
+
+#navBar a.active {
+	color: #ffffff;
+    background-color: #001c31;
 }

@@ -1,21 +1,25 @@
 #homePageContent1{
-    height: 250px;
-    width: 1300px;
-    /* background-color: grey; */
+    position: initial;
+    margin-top: 200px;
 
+    width: 1250px;
+    
     display: flex;
     flex-direction: column;
 
+    align-items: center;
     justify-content: center;
+
+    /* background-color: grey; */
 }
 
 #introContent{
-    height: auto;
-    width: 1250px;
 
     text-align: center;
 
     color: #001c31;
+    /* color: white; */
+
     /* background-color: black; */
 }
 
@@ -121,7 +125,6 @@
     border-radius: 25px;
     border-color: #95df1d;
     background-color: transparent;
-	backdrop-filter: blur(5px);
 }
 
 .contentBox2 p{

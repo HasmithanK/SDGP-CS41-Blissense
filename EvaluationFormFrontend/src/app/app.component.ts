@@ -16,12 +16,12 @@ import { SelectedFormComponent } from './selected-form/selected-form.component';
         <nav>
             
             <ul>
-                <li> <a id="home" routerLink="">Home</a> </li>
-                <li> <a id="predictDisorder" routerLink="#">Predict Disorder</a> </li>
-                <li> <a id="evaluationForm" routerLink='forms'>Evaluation Form</a> </li>
-                <li> <a id="exercises" routerLink="#">Exercise</a> </li>
-                <li> <a id="videoChat" routerLink="#">Video Chat</a> </li>
-                <li> <a id="about" routerLink="#">About us</a> </li>
+                <li> <a id="home" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a> </li>
+                <li> <a id="predictDisorder" routerLink="#" routerLinkActive="active">Predict Disorder</a> </li>
+                <li> <a id="evaluationForm" routerLink='forms' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Evaluation Form</a> </li>
+                <li> <a id="exercises" routerLink="#" routerLinkActive="active">Exercise</a> </li>
+                <li> <a id="videoChat" routerLink="#" routerLinkActive="active">Video Chat</a> </li>
+                <li> <a id="about" routerLink="#" routerLinkActive="active">About us</a> </li>
             </ul>
             
         </nav>
