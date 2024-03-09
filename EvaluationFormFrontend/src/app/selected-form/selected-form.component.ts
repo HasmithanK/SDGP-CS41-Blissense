@@ -223,7 +223,9 @@ export class SelectedFormComponent {
 
     this.displayQue = false;
 
-    this.finalAnswer = String(this.formService.evaluateAnswers());
+    // Submitting the answer to the backend
+    this.formService.submitAnswer();
+    this.finalAnswer = String(this.formService.evaluateAnswer());
 
     this.displayAnswer = true;
     

@@ -20,22 +20,42 @@ export class FormService {
     return await data.json() ?? [];
   }
 
-  async evaluateAnswers() : Promise<string> {
-    const data = await fetch(`${this.url}/storeAnswers/${JSON.stringify(this.answerArray)}`);
-    return await data.json() ?? ""; 
-  }
-
   async submitAnswer() : Promise<string> {
     try {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       const body = JSON.stringify(this.answerArray);
       console.log(this.url + 'submitAnswer');
-      this.finalResult =  String(this.http.post<any>(`${this.url}/${'storeAnswers'}/${this.formType}`, body, { headers }));
+      this.finalResult =  String(this.http.post<any>(`${this.url}/${'submitAnswers'}`, body, { headers }));
     } catch(error) {
       console.error('Error submitting form:', error);
     }
     return this.finalResult;
   }
+
+  async evaluateAnswer() : Promise<string> {
+    const data = await fetch(`${this.url}/${'evaluateAnswer'}`);
+    console.log(this.url + 'evaluateform');
+    return await data.json() ?? "";
+  }
+
+
+
+  // async evaluateAnswers() : Promise<string> {
+  //   const data = await fetch(`${this.url}/storeAnswers/${JSON.stringify(this.answerArray)}`);
+  //   return await data.json() ?? ""; 
+  // }
+
+  // async submitAnswer() : Promise<string> {
+  //   try {
+  //     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  //     const body = JSON.stringify(this.answerArray);
+  //     console.log(this.url + 'submitAnswer');
+  //     this.finalResult =  String(this.http.post<any>(`${this.url}/${'storeAnswers'}`, body, { headers }));
+  //   } catch(error) {
+  //     console.error('Error submitting form:', error);
+  //   }
+  //   return this.finalResult;
+  // }
 
   // async evaluateAnswer() : Promise<string> {
   //   const data = await fetch(`${this.url}/${'evaluateAnswer'}`);

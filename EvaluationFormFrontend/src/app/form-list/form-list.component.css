@@ -1,15 +1,17 @@
 /* Creating a container to hold the forms */
 .formDiv{
-    /* position: relative; */
+    position: relative;
 
+    margin-top: 12.5%;
     display: flex;
+    flex: wrap;
 
     height: 300px;
     width: 1000px;
 
     border-radius: 25px;
 
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     
     justify-content: center;
     align-items: center;
@@ -65,3 +67,95 @@
     font-size: 18px;
 }
 
+.card {
+  
+  width: 150px;
+  height: 200px;
+
+  margin: 0 50px 0 0;
+
+  /* background-color: #ffffff; */
+
+  font-size: 30px;
+  font-weight: 900;
+
+  border-radius: 15px;
+  background: #e0e0e0;
+  box-shadow:  20px 20px 60px #001c31,
+              -20px -20px 60px #ffffff;
+
+  /* border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px  #001c31; */
+
+  transition: all 0.5s;
+  transition-behavior: smooth; 
+}
+
+.card:hover {
+  border-radius: 15px;
+
+  /* background: white; */
+  box-shadow: 0px 0px 10px 5px  #001c31;
+
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.first-content {
+  height: 100%;
+  width: 100%;
+  
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 15px;
+
+  font-size: 18px;
+  color: #001c31;
+
+  opacity: 1;
+  transition: all 1s;
+
+  /* background-color:#39b2da; */
+}
+
+.card:hover .first-content {
+  height: 0px;
+  opacity: 0;
+}
+
+.second-content {
+  height: 0%;
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: justify;
+
+  border-radius: 15px;
+
+  font-size: 0px;
+  opacity: 0;
+  transition: all 1s;
+  transform: rotate(90deg) scale(-1);
+
+  color: #001c31;
+  /* background-color: rgb(255, 255, 255); */
+}
+
+.second-content p{
+  margin: 15px;
+}
+
+.card:hover .second-content {
+  height: 100%;
+  font-size: 0.8rem;
+
+  opacity: 1;
+  transform: rotate(0deg);
+}
