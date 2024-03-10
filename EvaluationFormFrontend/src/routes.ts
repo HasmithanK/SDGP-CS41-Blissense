@@ -2,15 +2,16 @@ import { Routes } from '@angular/router';
 import { FormListComponent } from './app/form-list/form-list.component';
 import { SelectedFormComponent } from './app/selected-form/selected-form.component';
 import { HomePageComponent } from './app/home-page/home-page.component';
+import { DisorderPredictionComponent } from './app/disorder-prediction/disorder-prediction.component';
 
 const routeConfig: Routes = [
     {
-        path:'',
+        path:'', // By default will open this component;
         component: HomePageComponent,
-        title: 'Home Page'
+        title: 'Blissense'
     },
     {
-        path: 'forms', // By default will open this component;
+        path: 'forms',
         component: FormListComponent,
         title: 'Forms Page',
     },
@@ -18,6 +19,11 @@ const routeConfig: Routes = [
         path: 'forms/selectedform', // Since accessed via forms component
         component: SelectedFormComponent,
         title: 'Evaluation Form page'
+    },
+    {
+        path: 'predictdisorder',
+        component: DisorderPredictionComponent,
+        title: 'Predict Disorder'
     }
 ];
 

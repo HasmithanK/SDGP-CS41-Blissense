@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FormService } from '../form.service';
+import { subscriptionLogsToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
 @Component({
   selector: 'app-selected-form',
@@ -22,43 +23,49 @@ import { FormService } from '../form.service';
                     <label id="question"><b>{{question}}</b></label><br> 
                 <!-- </div> -->
 
-                <div id="answer">
-                  <input type="radio" id="zero" name="questions" value="0" [(ngModel)]="radioAnswer" 
-                  (change)="onSelection($event)" [disabled]="buttonZero">
+                <!-- <div id="answer" *ngIf="dataLoaded">
+                  <input type="radio" id="zero" name="ze" value="0" [(ngModel)]="radioAnswer" 
+                  (change)="onSelection($event)" *ngIf="buttonZero">
                   <label for="zero">0</label>
 
-                  <input type="radio" id="one" name="questions" value="1" [(ngModel)]="radioAnswer" 
-                  (change)="onSelection($event)" [disabled]="buttonOne">
+                  <input type="radio" id="one" name="one" value="1" [(ngModel)]="radioAnswer" 
+                  (change)="onSelection($event)" *ngIf="buttonOne">
                   <label for="one">1</label>
 
-                  <input type="radio" id="two" name="questions" value="2" [(ngModel)]="radioAnswer" 
-                  (change)="onSelection($event)" [disabled]="buttonTwo">
+                  <input type="radio" id="two" name="two" value="2" [(ngModel)]="radioAnswer" 
+                  (change)="onSelection($event)" *ngIf="buttonTwo">
                   <label for="two">2</label>
 
-                  <input type="radio" id="three" name="questions" value="3" [(ngModel)]="radioAnswer" 
-                  (change)="onSelection($event)" [disabled]="buttonThree">
+                  <input type="radio" id="three" name="three" value="3" [(ngModel)]="radioAnswer" 
+                  (change)="onSelection($event)" *ngIf="buttonThree">
                   <label for="three">3</label>
 
-                  <input type="radio" id="four" name="questions" value="4" [(ngModel)]="radioAnswer" 
-                  (change)="onSelection($event)" [disabled]="buttonFour">
+                  <input type="radio" id="four" name="four" value="4" [(ngModel)]="radioAnswer" 
+                  (change)="onSelection($event)" *ngIf="buttonFour">
                   <label for="four">4</label>
 
-                  <input type="radio" id="five" name="questions" value="5" [(ngModel)]="radioAnswer" 
-                  (change)="onSelection($event)" [disabled]="buttonFive">
+                  <input type="radio" id="five" name="five" value="5" [(ngModel)]="radioAnswer" 
+                  (change)="onSelection($event)" *ngIf="buttonFive">
                   <label for="five">5</label>
 
-                  <input type="radio" id="six" name="questions" value="6" [(ngModel)]="radioAnswer" 
-                  (change)="onSelection($event)" [disabled]="buttonSix">
+                  <input type="radio" id="six" name="six" value="6" [(ngModel)]="radioAnswer" (change)="onSelection($event)" *ngIf="buttonSix">
                   <label for="six">6</label><br>
+                </div> -->
+                <div id="answer">
+                  <div *ngFor="let option of options">
+                    <input type="radio" [id]="option.name" name="radioAnswers" [value]="option.value" [(ngModel)]="radioAnswer" (change)="onSelection($event)">
+                    <label [for]="option.name">{{option.label}}</label>
+                  </div>
                 </div>
+                
 
-                <div id="questionNavButtonDiv">
-                    <button type="button" id="backButton" *ngIf="backQue" (click)="back()">Back</button>
+              <div id="questionNavButtonDiv">
+                  <button type="button" id="backButton" *ngIf="backQue" (click)="back()">Back</button>
 
-                    <button type="button" id="nextButton" *ngIf="nextQue" (click)="next()">Next</button>
+                  <button type="button" id="nextButton" *ngIf="nextQue" (click)="next()">Next</button>
 
-                    <button type="button" id="submitButton" *ngIf="submitAnswer" (click)="submit()">Submit</button>
-                </div>
+                  <button type="button" id="submitButton" *ngIf="submitAnswer" (click)="submit()">Submit</button>
+              </div>
             </div>
 
             <div id="answerBox" *ngIf="displayAnswer">
@@ -71,9 +78,12 @@ import { FormService } from '../form.service';
   `,
   styleUrl: './selected-form.component.css'
 })
-export class SelectedFormComponent {
+export class SelectedFormComponent implements OnInit {
   formService: FormService = inject(FormService);
   
+  selectedOption: string = "";
+  options: Option[] = [];
+
   buttonZero: boolean = false; buttonOne: boolean = false; buttonTwo: boolean = false; 
   buttonThree: boolean = false; buttonFour: boolean = false; buttonFive: boolean = false; 
   buttonSix: boolean = false; 
@@ -103,40 +113,69 @@ export class SelectedFormComponent {
   finalAnswer: String = "";
 
   constructor () {
+  }
+
+  ngOnInit() {
+    console.log("\nThis is the form number inside the constructor" + this.formService.formType);
     // Emptying the error each time a new form is selected
     this.formService.answerArray = [];
-
-    // Displaying the radio buttons depending on the form selected
-    if (this.formService.formType == 1) {
-      this.buttonZero = true; this.buttonOne = true; this.buttonTwo = true; 
-      this.buttonThree = true; this.buttonFour = true; this.buttonFive = false; 
-      this.buttonSix = false;
-
-    } else if (this.formService.formType == 2) {
-      this.buttonZero = false; this.buttonOne = true; this.buttonTwo = true; 
-      this.buttonThree = true; this.buttonFour = true; this.buttonFive = false; 
-      this.buttonSix = false;
-
-    } else if (this.formService.formType == 3) {
-      this.buttonZero = true; this.buttonOne = true; this.buttonTwo = false; 
-      this.buttonThree = false; this.buttonFour = false; this.buttonFive = false; 
-      this.buttonSix = false;
-
-    } else if (this.formService.formType == 4) {
-      this.buttonZero = true; this.buttonOne = true; this.buttonTwo = true; 
-      this.buttonThree = true; this.buttonFour = true; this.buttonFive = false; 
-      this.buttonSix = false;
-
-    } else if (this.formService.formType == 5) {
-      this.buttonZero = true; this.buttonOne = true; this.buttonTwo = true; 
-      this.buttonThree = true; this.buttonFour = true; this.buttonFive = false; 
-      this.buttonSix = false;
-    }
 
     // Fetching the questions from the server
     this.formService.getQuestions().then((questionArray: string[]) => {
       this.questionArray = questionArray}
-    )
+    );
+
+    // Displaying the radio buttons depending on the form selected
+    if (this.formService.formType === 1) {
+      this. options = [
+        { name: 'zero', label: '0', value: '0'},
+        { name: 'one', label: '1', value: '1'},
+        { name: 'two', label: '2', value: '2'},
+        { name: 'three', label: '3', value: '3'},
+        { name: 'four', label: '4', value: '4'}
+      ];
+
+    } else if (this.formService.formType === 2) {
+      this. options = [
+        { name: 'zero', label: '0', value: '0'},
+        { name: 'one', label: '1', value: '1'},
+        { name: 'two', label: '2', value: '2'},
+        { name: 'three', label: '3', value: '3'},
+        { name: 'four', label: '4', value: '4'}
+      ];
+      console.log("Condition 2");
+
+    } else if (this.formService.formType === 3) {
+      this. options = [
+        { name: 'zero', label: '0', value: '0'},
+        { name: 'one', label: '1', value: '1'},
+      ];
+
+    } else if (this.formService.formType === 4) {
+      this. options = [
+        { name: 'zero', label: '0', value: '0'},
+        { name: 'one', label: '1', value: '1'},
+        { name: 'two', label: '2', value: '2'},
+        { name: 'three', label: '3', value: '3'},
+        { name: 'four', label: '4', value: '4'},
+        { name: 'five', label: '5', value: '5'},
+        { name: 'six', label: '6', value: '6'},
+        { name: 'seven', label: '7', value: '7'}
+
+
+      ];
+
+    } else if (this.formService.formType === 5) {
+      this. options = [
+        { name: 'zero', label: '0', value: '0'},
+        { name: 'one', label: '1', value: '1'},
+        { name: 'two', label: '2', value: '2'},
+        { name: 'three', label: '3', value: '3'},
+        { name: 'four', label: '4', value: '4'}
+      ];
+    } else {
+      console.log("There is an error");
+    }
   }
 
   start(): void {
@@ -250,4 +289,10 @@ export class SelectedFormComponent {
 
     this.displayAnswer = true;  
   }
+}
+
+interface Option {
+  name: string;
+  label: string;
+  value: string;
 }
