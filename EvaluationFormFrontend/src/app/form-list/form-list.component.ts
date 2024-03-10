@@ -50,6 +50,7 @@ import { FormService } from '../form.service';
                     <p>PHQ-9</p>
                 </div>
                 <div class="second-content">
+                    <p>PHQ-9</p>
                     <p>This contend explains about the phq form
                         and I will also add some extra content for 
                         you to create it.
@@ -64,6 +65,7 @@ import { FormService } from '../form.service';
                     <p>GAD-7</p>
                 </div>
                 <div class="second-content">
+                    <p>GAD-7</p>
                     <p>This contend explains about the phq form</p>
                 </div>
             </div>
@@ -75,6 +77,7 @@ import { FormService } from '../form.service';
                     <p>MSI-BPD</p>
                 </div>
                 <div class="second-content">
+                    <p>MSI-BPD</p>
                     <p>This contend explains about the phq form</p>
                 </div>
             </div>
@@ -86,6 +89,7 @@ import { FormService } from '../form.service';
                     <p>PANSS</p>
                 </div>
                 <div class="second-content">
+                    <p>PANSS</p>
                     <p>This contend explains about the phq form</p>
                 </div>
             </div>

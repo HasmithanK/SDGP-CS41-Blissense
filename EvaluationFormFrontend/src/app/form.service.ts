@@ -7,70 +7,56 @@ import { Observable } from 'rxjs';
 })
 export class FormService {
 
+  // Variables to get the right set of questions and to store the answers for the questions
   formType: number | null = null;
   answerArray: number[] = [];
   finalResult : string = "";
+
   url = 'http://localhost:8080/api/v1/form';
 
   constructor(private http: HttpClient) {}
 
+
+  // Method to get the questions from the backend
   async getQuestions() : Promise<string[]> {
     const data = await fetch(`${this.url}/${'getEvaluationForm'}/${this.formType}`);
     console.log(this.url + 'getEvaluationForm' + this.formType);
     return await data.json() ?? [];
   }
 
+  // Method to submit answer to the backend
   async submitAnswer() : Promise<string> {
     try {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      const body = JSON.stringify(this.answerArray);
-      console.log(this.url + 'submitAnswer');
+      const body = this.answerArray;
       this.finalResult =  String(this.http.post<any>(`${this.url}/${'submitAnswers'}`, body, { headers }));
+      console.log("\nThe program reached to submit blok");
+
     } catch(error) {
       console.error('Error submitting form:', error);
     }
     return this.finalResult;
   }
 
-  async evaluateAnswer() : Promise<string> {
-    const data = await fetch(`${this.url}/${'evaluateAnswer'}`);
-    console.log(this.url + 'evaluateform');
-    return await data.json() ?? "";
-  }
+  // Method to get back the evaluated results from the backend
 
-
-
-  // async evaluateAnswers() : Promise<string> {
-  //   const data = await fetch(`${this.url}/storeAnswers/${JSON.stringify(this.answerArray)}`);
-  //   return await data.json() ?? ""; 
-  // }
-
-  // async submitAnswer() : Promise<string> {
-  //   try {
-  //     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-  //     const body = JSON.stringify(this.answerArray);
-  //     console.log(this.url + 'submitAnswer');
-  //     this.finalResult =  String(this.http.post<any>(`${this.url}/${'storeAnswers'}`, body, { headers }));
-  //   } catch(error) {
-  //     console.error('Error submitting form:', error);
-  //   }
-  //   return this.finalResult;
-  // }
-
-  // async evaluateAnswer() : Promise<string> {
-  //   const data = await fetch(`${this.url}/${'evaluateAnswer'}`);
-  //   console.log(this.url + 'evaluateAnswer');
-  //   return await data.json() ?? "";
-  // }
-
-  
   /*
-  // Transferring answerArray array to backend
-  async evaluateAnswer() : Promise<Observable<any>> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const body = JSON.stringify(this.answerArray);
+  async evaluateAnswer() : Promise<string> {
 
-    return this.http.post<any>(`${this.url}/${'getEvaluationForm'}/${this.formType}`, body, { headers });
+    const data = await fetch(`${this.url}/${'evaluateAnswer'}`);
+
+    console.log("\nThis is the data received from the backend: " + await data.json() ?? "");
+    
+    return await data.json() ?? "";
   } */
+
+  async evaluateAnswer() : Promise<string> {
+    const response = await fetch(`${this.url}/evaluateAnswer`);
+    const data = await response.json();
+
+    console.log("\nThis is the data received from the backend: ", data);
+
+    return data;
+}
 
 }

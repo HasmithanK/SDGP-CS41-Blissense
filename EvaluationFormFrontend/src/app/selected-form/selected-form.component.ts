@@ -103,8 +103,10 @@ export class SelectedFormComponent {
   finalAnswer: String = "";
 
   constructor () {
-    console.log("Entered constructor");
+    // Emptying the error each time a new form is selected
+    this.formService.answerArray = [];
 
+    // Displaying the radio buttons depending on the form selected
     if (this.formService.formType == 1) {
       this.buttonZero = true; this.buttonOne = true; this.buttonTwo = true; 
       this.buttonThree = true; this.buttonFour = true; this.buttonFive = false; 
@@ -133,7 +135,7 @@ export class SelectedFormComponent {
 
     // Fetching the questions from the server
     this.formService.getQuestions().then((questionArray: string[]) => {
-    this.questionArray = questionArray}
+      this.questionArray = questionArray}
     )
   }
 
@@ -141,12 +143,13 @@ export class SelectedFormComponent {
     this.startQue = false;
     this.displayQue = true;
 
-    console.log(this.formService.formType);
+    console.log("\nThis is the selected form number: " + this.formService.formType);
 
     //Displaying the first question
     this.question = this.questionArray![this.currentQuestion];
   }
 
+  // Listening to the selection of the radio buttons to display the next and back button correctly
   onSelection(event: any): void {
 	  this.radioAnswer = event.target.value;
     if (this.radioAnswer !== "") {
@@ -167,9 +170,9 @@ export class SelectedFormComponent {
       this.nextQue = false;
       this.submitAnswer = false;   
     }
-    console.log("This block is reached");
   }
 
+  // Function to display next question and store the currently selected radio value
   next(): void {
     // Store the current selection in answerArray
     this.formService.answerArray[this.currentQuestion] = Number(this.radioAnswer);
@@ -189,14 +192,16 @@ export class SelectedFormComponent {
     // Update navigation buttons
     this.backQue = true;
 
+    // To display the next-button or submit-button conditionally
     if (this.radioAnswer !== undefined) {
       this.nextQue = this.radioAnswer !== "" && this.currentQuestion < this.questionArray.length - 1;
       this.submitAnswer = this.radioAnswer !== "" && this.currentQuestion == this.questionArray.length - 1;
     }
 
-    console.log(this.formService.answerArray);
+    console.log("\nThis is the current answerArray: " + this.formService.answerArray);
   }
 
+  // Method to go to the previous question
   back(): void {
     // Store the current selection in answerArray
     this.formService.answerArray[this.currentQuestion] = Number(this.radioAnswer);
@@ -213,22 +218,36 @@ export class SelectedFormComponent {
     this.nextQue = this.radioAnswer !== "" && this.currentQuestion < this.questionArray.length - 1;
     this.submitAnswer = this.radioAnswer !== "" && this.currentQuestion == this.questionArray.length - 1;
 
-    console.log(this.formService.answerArray);
+    console.log("\nThis is the current answerArray: " + this.formService.answerArray);
   }
 
+  // Method to submit the answer collected
   submit(): void {
     // Adding the last selected value and reseting radion button selection
     this.formService.answerArray[this.currentQuestion] = Number(this.radioAnswer);
-    console.log(this.formService.answerArray);
+    console.log("\nThis is the current answerArray: " + this.formService.answerArray);
 
+
+    // Hiding the question and it's relevant elements to display the final results.
     this.displayQue = false;
 
     // Submitting the answer to the backend
     this.formService.submitAnswer();
-    this.finalAnswer = String(this.formService.evaluateAnswer());
 
-    this.displayAnswer = true;
-    
-    console.log("This is the submit block " + this.displayAnswer);   
+    //Getting back the final results after evaluation
+
+    /* 
+      When you try to convert a Promise to a string, it doesn’t give you the resolved value of the Promise. 
+      Instead, it gives you the string "[object Promise]", which is the default string representation of a Promise object.
+
+      To get the actual value that the Promise will resolve to, you need to wait for the Promise to resolve using the .
+      then() method or async/await. Here’s how you can do it:
+    */
+    this.formService.evaluateAnswer().then(finalAnswer => {
+      this.finalAnswer = String(finalAnswer);
+      console.log("This is the final answer: " + this.finalAnswer);
+    });
+
+    this.displayAnswer = true;  
   }
 }
