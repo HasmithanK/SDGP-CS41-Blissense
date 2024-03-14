@@ -19,6 +19,13 @@
 
     color: #001c31;
 
+    background-color:transparent;
+	-webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); /* For most other browsers */
+	
+    /* border: 2px solid #001c31; */
+    /* border-radius: 25px; */
+
     /* background-color: black; */
 }
 
@@ -31,6 +38,8 @@
 .introContent p{
     font-family: "Trirong", serif;
     font-size: 1.25em;
+
+    margin: 50px;
 
     text-align: justify;
 }

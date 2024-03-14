@@ -44,67 +44,67 @@ import { FormService } from '../form.service';
 
         <div class="formDiv">
 
-        <a id="PHQ9" (click)="getFormNum(1)" routerLink='selectedform'> 
-            <div class="card">
-                <div class="first-content">
-                    <p>PHQ-9</p>
+            <a id="PHQ9" (click)="getFormNum(1)" routerLink='selectedform'> 
+                <div class="card">
+                    <div class="first-content">
+                        <p>PHQ-9</p>
+                    </div>
+                    <div class="second-content">
+                        <p>PHQ-9</p>
+                        <p>This contend explains about the phq form
+                            and I will also add some extra content for 
+                            you to create it.
+                        </p>
+                    </div>
                 </div>
-                <div class="second-content">
-                    <p>PHQ-9</p>
-                    <p>This contend explains about the phq form
-                        and I will also add some extra content for 
-                        you to create it.
-                    </p>
-                </div>
-            </div>
-        </a>
+            </a>
 
-        <a id="GAD7" (click)="getFormNum(2)" routerLink='selectedform'>
-            <div class="card">
-                <div class="first-content">
-                    <p>GAD-7</p>
+            <a id="GAD7" (click)="getFormNum(2)" routerLink='selectedform'>
+                <div class="card">
+                    <div class="first-content">
+                        <p>GAD-7</p>
+                    </div>
+                    <div class="second-content">
+                        <p>GAD-7</p>
+                        <p>This contend explains about the phq form</p>
+                    </div>
                 </div>
-                <div class="second-content">
-                    <p>GAD-7</p>
-                    <p>This contend explains about the phq form</p>
-                </div>
-            </div>
-        </a>
+            </a>
 
-        <a id="MSI-BPD" (click)="getFormNum(3)" routerLink='selectedform'> 
-            <div class="card">
-                <div class="first-content">
-                    <p>MSI-BPD</p>
+            <a id="MSI-BPD" (click)="getFormNum(3)" routerLink='selectedform'> 
+                <div class="card">
+                    <div class="first-content">
+                        <p>MSI-BPD</p>
+                    </div>
+                    <div class="second-content">
+                        <p>MSI-BPD</p>
+                        <p>This contend explains about the phq form</p>
+                    </div>
                 </div>
-                <div class="second-content">
-                    <p>MSI-BPD</p>
-                    <p>This contend explains about the phq form</p>
-                </div>
-            </div>
-        </a>
+            </a>
 
-        <a id="PANSS" (click)="getFormNum(4)" routerLink='selectedform'>
-            <div class="card">
-                <div class="first-content">
-                    <p>PANSS</p>
+            <a id="PANSS" (click)="getFormNum(4)" routerLink='selectedform'>
+                <div class="card">
+                    <div class="first-content">
+                        <p>PANSS</p>
+                    </div>
+                    <div class="second-content">
+                        <p>PANSS</p>
+                        <p>This contend explains about the phq form</p>
+                    </div>
                 </div>
-                <div class="second-content">
-                    <p>PANSS</p>
-                    <p>This contend explains about the phq form</p>
-                </div>
-            </div>
-        </a>
+            </a>
 
-        <a id="Form" (click)="getFormNum(5)" routerLink='selectedform'> 
-            <div class="card">
-                <div class="first-content">
-                    <p>First</p>
+            <a id="Form" (click)="getFormNum(5)" routerLink='selectedform'> 
+                <div class="card">
+                    <div class="first-content">
+                        <p>First</p>
+                    </div>
+                    <div class="second-content">
+                        <p>This contend explains about the phq form</p>
+                    </div>
                 </div>
-                <div class="second-content">
-                    <p>This contend explains about the phq form</p>
-                </div>
-            </div>
-        </a>
+            </a>
 
         </div>
 

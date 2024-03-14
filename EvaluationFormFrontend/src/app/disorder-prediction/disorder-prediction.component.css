@@ -1,0 +1,36 @@
+#userInputProvidingDiv{
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 10%;
+
+    height: 500px;
+    width: 800px;
+
+    background-color: #c81616;
+}
+
+#informationDiv{
+    height: 400px;
+    width: 250px;
+
+    border-radius: 25px;
+
+    background-color: white;
+}
+
+#userInputDiv{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: blue;
+}
+
+#userInputDiv{
+    
+}

@@ -16,6 +16,7 @@ import { subscriptionLogsToBeFn } from 'rxjs/internal/testing/TestScheduler';
             <div id="startButtonDiv">
                 <button type="button" id="startButton" *ngIf="startQue" (click)="start()">Start</button>
             </div>
+            
 
             <div id="questionsDivContent" *ngIf="displayQue">
                 
@@ -51,12 +52,29 @@ import { subscriptionLogsToBeFn } from 'rxjs/internal/testing/TestScheduler';
                   <input type="radio" id="six" name="six" value="6" [(ngModel)]="radioAnswer" (change)="onSelection($event)" *ngIf="buttonSix">
                   <label for="six">6</label><br>
                 </div> -->
-                <div id="answer">
+                
+                <!-- <div id="answer">
                   <div *ngFor="let option of options">
                     <input type="radio" [id]="option.name" name="radioAnswers" [value]="option.value" [(ngModel)]="radioAnswer" (change)="onSelection($event)">
                     <label [for]="option.name">{{option.label}}</label>
                   </div>
+                </div> -->
+
+                <!-- <div id="answer">
+                  <div *ngFor="let option of options; let i = index">
+                    <input type="radio" [id]="i" name="radioAnswers" [value]="option.value" [(ngModel)]="radioAnswer" (click)="onSelection($event)">
+                    <label [for]="i">{{option.label}}</label>
+                  </div>
+                </div>  -->
+
+                <div id="answer">
+                  <div *ngFor="let option of options; let i = index">
+                    <input type="radio" [id]="i" name="radioAnswers" [value]="option.value" (change)="onSelection($event)">
+                    <label [for]="i">{{option.label}}</label>
+                  </div>
                 </div>
+
+
                 
 
               <div id="questionNavButtonDiv">
@@ -69,7 +87,7 @@ import { subscriptionLogsToBeFn } from 'rxjs/internal/testing/TestScheduler';
             </div>
 
             <div id="answerBox" *ngIf="displayAnswer">
-                  This is an answer slot {{finalAnswer}}
+                  {{finalAnswer}}
             </div>
         </div>      
 
@@ -81,12 +99,13 @@ import { subscriptionLogsToBeFn } from 'rxjs/internal/testing/TestScheduler';
 export class SelectedFormComponent implements OnInit {
   formService: FormService = inject(FormService);
   
-  selectedOption: string = "";
+  // Setting the default value of the radio buttons
+  radioAnswer: string = "";
   options: Option[] = [];
 
-  buttonZero: boolean = false; buttonOne: boolean = false; buttonTwo: boolean = false; 
-  buttonThree: boolean = false; buttonFour: boolean = false; buttonFive: boolean = false; 
-  buttonSix: boolean = false; 
+  // buttonZero: boolean = false; buttonOne: boolean = false; buttonTwo: boolean = false; 
+  // buttonThree: boolean = false; buttonFour: boolean = false; buttonFive: boolean = false; 
+  // buttonSix: boolean = false; 
 
   question: string = "Questions must appear here";
 
@@ -99,9 +118,6 @@ export class SelectedFormComponent implements OnInit {
   backQue: boolean = false;
   nextQue: boolean = false;
   submitAnswer: boolean = false;
-
-  // Setting the default value of the radio buttons
-  radioAnswer: string = "";
 
   questionArray: string[] = ["1. This"]//, "2. is", "3. just", "4. an", "5. array."];
 
@@ -161,8 +177,6 @@ export class SelectedFormComponent implements OnInit {
         { name: 'five', label: '5', value: '5'},
         { name: 'six', label: '6', value: '6'},
         { name: 'seven', label: '7', value: '7'}
-
-
       ];
 
     } else if (this.formService.formType === 5) {
