@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 body{
+    margin: 0;
+    
     display: flex;
     flex-direction: column;
 
@@ -9,8 +11,8 @@ body{
 
     overflow-x: hidden; /* Hide horizontal scrollbar */
 
-    background-color: #eae0d3;
-    background-image: url("./assets/HomePage.jpg");
+    background-color: white;
+    /* background-image: url("//src/assets/"); */
         
     width: 100%;
     min-height: 100vh;

@@ -1,8 +1,461 @@
-#homePageContent1{
-    position: initial;
+.animate {
+    opacity: 0;
+    transform: translateY(150px);
+    transition: transform 3s, opacity 3s;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+button {
+    padding: 12px 50px; 
+
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+
+    font-family: Inter; 
+    font-size: 18px; 
+    font-weight: 400; 
+    line-height: 28px;
+
+    color: #FFFFFF; /* white */
+
+    opacity: 1; 
+    border: none; 
+    border-radius: 8px;
+    transition: 0.5s ease-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Disabled */
+button:disabled {
+    opacity: 0.4; 
+}
+
+
+#introImage {
+    position: relative; /* or absolute, depending on your layout */
+    top: -100px;
+    left: 0px; 
+    width: 100%; 
+    height: 100%;
+}
+
+#introContainer {
+    position: absolute; 
+    top: 280px; 
+    left: 120px; 
+
+    height: 250px;
+    width: 700px;
+}
+
+#introHeading {
+    position: relative;
+
+    font-family: Epilogue; /* Heading */
+    font-size: 62px; 
+    font-weight: 800; 
+    line-height: 82px; 
+
+    color: #274B54; 
+}
+
+#introBody { 
+    font-family: Epilogue; /* Body */
+    font-size: 18px; 
+    font-weight: 400; 
+    line-height: 22px;
+
+    color: #274B54; 
+}
+
+
+#introContainer button {
+    margin-top: 25px;
+
+    background: #0C3C61;
+    opacity: 1;
+}
+
+
+#predictContainer {
+    /* margin-top: 50px; */
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 400px;
+    width: 100%;
+
+    background: #F3F4F6;
+}
+
+#predictHeading {
+    text-align: center;
+
+    font-family: Epilogue; /* Heading */
+    font-size: 32px; 
+    font-weight: 700; 
+    line-height: 48px; 
+
+    color: #274B54;
+}
+
+#predictBody {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+
+    width: 80%;
+    text-align: center;
+
+    font-family: Inter; /* Body */
+    font-size: 18px; 
+    font-weight: 400; 
+    line-height: 28px;
+
+    color: #274B54; 
+}
+
+#predictContainer button {
+    background: #0C3C61;
+}
+
+#evaluationFormContainer{
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 600px;
+    width: 100%;
+
+    background: #F3F4F6;
+}
+
+
+#evaluationFormHeading {
+    text-align: center;
+
+    font-family: Epilogue; /* Heading */
+    font-size: 32px; 
+    font-weight: 700; 
+    line-height: 48px; 
+
+    color: #274B54;
+}
+
+#evaluationFormBody {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+
+    width: 80%;
+    text-align: center;
+
+    font-family: Inter; /* Body */
+    font-size: 18px; 
+    font-weight: 400; 
+    line-height: 28px;
+
+    color: #274B54; 
+}
+
+#screeningTool {
+    margin-bottom: 2%;
+
+    font-family: Epilogue; 
+    font-size: 25px; 
+    font-weight: 700; 
+    line-height: 28px;
+
+    color: #274B54;
+}
+
+#screeningToolButtons{
+    margin-bottom: 3%;
+
+    width: 80%;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+
+    /* background-color: #274B54; */
+}
+
+
+#screeningToolButtons button {
+    background: #00BDD6;
+}
+
+
+#formTryButton {
+    background: #0C3C61;   
+}
+
+#exerciseContainer {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 700px;
+    width: 100%;
+
+    /* background: #F3F4F6; */
+}
+
+#exerciseHeading {
+    margin-bottom: 2%;
+
+    font-family: Epilogue; /* Heading */
+    font-size: 48px; 
+    font-weight: 700; 
+    line-height: 68px; 
+
+    color: #274B54;
+}
+
+#exerciseBody {
+    margin-bottom: 3%;
+
+    width: 80%;
+    text-align: center;
+
+    font-family: Inter; /* Body */
+    font-size: 18px; 
+    font-weight: 400; 
+    line-height: 28px;
+
+    color: #274B54; 
+}
+
+#exerciseContent {
+    width: 55%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.exercise {
+    width: 300px; 
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    /*background: #FFFFFF; /* white */
+
+    border-radius: 6px; /* border */
+    box-shadow: 0px 17px 35px #171a1f, 0px 0px 2px #171a1f; /* shadow */
+}
+
+.exercise img {
+    position: relative;
+    top: 0;
+    
+    width: 300px; 
+    height: 225px; 
+    
+    border-radius: 6px 6px 0px 0px;
+}
+
+.exerciseTitle{
+    font-family: Epilogue; /* Heading */
+    font-size: 20px; 
+    font-weight: 700; 
+    line-height: 20px; 
+    color: #274B54
+}
+
+.exerciseDescription {
+    width: 80%;
+
+    text-align: center;
+    
+    font-family: Inter; /* Body */
+    font-size: 14px; 
+    font-weight: 400; 
+    line-height: 16px;
+
+    color: #274B54
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.column {
+    margin: 0 20px;
+}
+.column h4, .column ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.right-section input[type="email"] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container 25
+#introContainer {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 1100px; 
+    height: 400px; 
+
+    background: #FFFFFF; /* white
+    border-radius: 0px;
+}
+
+#introContentContainer {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 90%;
+    height: 80%;
+
+    /* background-color: aqua;
+}
+
+#introContent {
+    display: flex;
+    flex-direction: column;
+
+    width: 40%;
+}
+
+#introHeading { 
+    font-family: Epilogue; /* Heading
+    font-size: 50px; 
+    font-weight: 700;
+    color: #0C3C61; /* neutral-900
+}
+
+#introBody {
+    font-family: Epilogue;
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #0C3C61;
+
+    text-align: justify;
+
+
+}
+
+#introContentImg {
+    max-height:90%;
+}
+
+
+#videoChatContainer{
+    margin-top: 5%;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 1100px; 
+    height: 400px; 
+
+    background: #FFFFFF; /* white
+    border-radius: 0px;
+}
+
+#videoChatHeading { 
+    font-family: Epilogue; /* Heading
+    font-size: 32px; 
+    font-weight: 700;
+    color: #0C3C61; /* neutral-900
+}
+
+#videoChatBody {
+    font-family: Epilogue;
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #0C3C61;
+
+    text-align: justify;
+
+
+}
+
+#videoChatImg {
+    max-height:90%;
+}
+*/
+
+/* -------------------------------------------------------- */
+
+/* #homePageContent1{
     margin-top: 200px;
 
-    width: 1250px;
+    width: 90%;
     
     display: flex;
     flex-direction: column;
@@ -10,8 +463,9 @@
     align-items: center;
     justify-content: center;
 
-    /* background-color: grey; */
+    /* background-color: grey;
 }
+
 
 .introContent{
 
@@ -21,12 +475,13 @@
 
     background-color:transparent;
 	-webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px); /* For most other browsers */
+    backdrop-filter: blur(5px); /* For most other browsers 
 	
-    /* border: 2px solid #001c31; */
-    /* border-radius: 25px; */
+    /* border: 2px solid #001c31; 
+    /* border-radius: 25px; 
 
-    /* background-color: black; */
+    /* background-color: black; 
+
 }
 
 .introContent h1{
@@ -45,14 +500,14 @@
 }
 
 
-/* CSS for  predictDisoderContent*/
+/* CSS for  predictDisoderContent
 #predictDisoderContent{
     color: #001c31;
 }
 
 
 
-/* Designing the text for the heading */
+/* Designing the text for the heading
 
 #blogContentTopic{
     display: flex;
@@ -75,12 +530,12 @@
 
     gap: 100px;
 
-    /* background-color: #d6d6e7; */
+    /* background-color: #d6d6e7;
     text-align: center;
 }
 
 
-/* CSS to create boxes to align next to each other */
+/* CSS to create boxes to align next to each other
 .contentBox{
     height: 450px;
     width: 300px;
@@ -102,4 +557,4 @@
 .contentBox p{
     color: #001c31;
 }
-
+ */

@@ -25,14 +25,14 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 60px;
+	height: 50px;
 
-	background-color:transparent;
-	-webkit-backdrop-filter: blur(5px);
+	background-color: #DEE1E6;
+	/*-webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px); /* For most other browsers */
 	
-    border-bottom: 2px solid;
-    border-color: #001c31;
+    /* border-bottom: 2px solid;
+    border-color: #274B54FF; */
 	
 	padding: 0 20px;
 	box-sizing: border-box;
@@ -68,17 +68,17 @@
     border-radius: 10px;
     
     padding: 10px 15px;
-    color: #001c31;
+    color: #0C3C61;
 	text-decoration: none;
 }
 
 #navBar a:hover {
 	color: #ffffff;
-    background-color: #001c31;
+    background-color: #0C3C61;
     
 }
 
 #navBar a.active {
 	color: #ffffff;
-    background-color: #001c31;
+    background-color: #0C3C61;
 }
