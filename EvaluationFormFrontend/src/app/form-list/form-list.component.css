@@ -1,3 +1,37 @@
+.formBox {
+  width: 275px; 
+  height: 325px;
+
+  background: #FFFFFF; /* white */
+  border-radius: 8px;
+
+  box-shadow: 0px 4px 9px #171a1f, 0px 0px 2px #171a1f;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Creating a container to hold the forms */
 .formDiv{
     position: relative;
@@ -31,7 +65,7 @@
 }
 
 
-/* CSS to create boxes to align next to each other */
+/* CSS to create boxes to align next to each other
 .formBox{
     position: relative;
 
@@ -69,7 +103,7 @@
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 18px;
-}
+} */
 
 .card {
   

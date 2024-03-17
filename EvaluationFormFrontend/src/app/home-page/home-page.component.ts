@@ -92,7 +92,7 @@ import { RouterModule } from '@angular/router';
         <div id="exerciseContent" [ngClass]="{'visible': isVisible}" class="animate">
 
           <div class="exercise">
-            <img src="./assets/Yoga.png" alt="">
+            <img src="./assets/Yoga.png" alt="Yoga">
             <h1 class="exerciseTitle">Yoga</h1>
             <div class="exerciseDescription">
               Embrace Yoga! A journey to tranquility, 
@@ -102,7 +102,7 @@ import { RouterModule } from '@angular/router';
           </div>
 
           <div class="exercise">
-            <img src="./assets/BreathingExercise.png" alt="">
+            <img src="./assets/BreathingExercise.png" alt=" Breathing exercise">
             <h1 class="exerciseTitle">Breathing Exercise</h1>
             <div class="exerciseDescription">
               Discover Breathing Exercises! A path to
@@ -110,9 +110,34 @@ import { RouterModule } from '@angular/router';
               instilling balance in your daily life.
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
+
+    <div id="chatContainer">
+      <div id="chatHeading">
+        Connect and Unwind: <br>
+        Introducing Our Relaxation Chat Platform
+      </div>
+
+      <div id="chatBody">
+        Looking for a space to unwind, share thoughts, and connect 
+        with others? Look no further! Our platform pairs you with 
+        random users for genuine conversations. Whether you want to 
+        vent, discuss hobbies, or simply open up, our platform provides 
+        a safe and welcoming environment.
+      </div>
+
+      <img src="./assets/VideoChat.jpg" alt="Video Chat image">
+
+      <button type="button">Start Now</button>
+    </div>
+
+
+
+
+
+
 
     <!-- <div class="footer">
       <div class="column">
@@ -242,7 +267,7 @@ import { RouterModule } from '@angular/router';
 
       <div id="videoChatContainer">
         <div id="videoChatContent">
-           <img src="./assets/HappyPeople.jpg" alt="Image of Happy People" id="videoChatImg">
+          <img src="./assets/HappyPeople.jpg" alt="Image of Happy People" id="videoChatImg">
           <div id="videoChatHeading">
             Connect and Unwind:
             Introducing Our Relaxation Chat Platform

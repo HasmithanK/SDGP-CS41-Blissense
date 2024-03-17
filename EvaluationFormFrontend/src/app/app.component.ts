@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
                 <li> <a id="exercises" routerLink="#" routerLinkActive="active">Exercise</a> </li>
                 <li> <a id="videoChat" routerLink="#" routerLinkActive="active">Video Chat</a> </li>
                 <li> <a id="about" routerLink="#" routerLinkActive="active">About us</a> </li>
+                <li> <a id="logIn">Log in</a> </li>
             </ul>
             
         </nav>

@@ -52,9 +52,9 @@
 }
 
 #navBar li {
-	margin-right: 5px;
+	margin-right: 3px;
 
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #navBar li:first-child {
@@ -67,7 +67,7 @@
     font-style: normal;
     border-radius: 10px;
     
-    padding: 10px 15px;
+    padding: 8px 13px;
     color: #0C3C61;
 	text-decoration: none;
 }
@@ -81,4 +81,12 @@
 #navBar a.active {
 	color: #ffffff;
     background-color: #0C3C61;
+}
+
+#logIn {
+	border: 2px solid;
+	border-radius: 10px;
+	padding: 10px 15px;
+    color: #0C3C61;
+	text-decoration: none;
 }
