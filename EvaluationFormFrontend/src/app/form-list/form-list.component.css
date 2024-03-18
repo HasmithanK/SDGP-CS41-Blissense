@@ -1,200 +1,78 @@
-.formBox {
-  width: 275px; 
-  height: 325px;
+#formContainer {
+  margin-top: 15%;
+  margin-bottom: 15%;
 
-  background: #FFFFFF; /* white */
-  border-radius: 8px;
+  width: 1200px;
 
-  box-shadow: 0px 4px 9px #171a1f, 0px 0px 2px #171a1f;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Creating a container to hold the forms */
-.formDiv{
-    position: relative;
-
-    /* margin-top: 12.5%; */
-    display: flex;
-    flex: wrap;
-
-    height: 300px;
-    width: 1000px;
-
-    border-radius: 25px;
-
-    /*
-    background-color:transparent;
-	  -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px); /* For most other browsers */
-	
-    
-    justify-content: center;
-    align-items: center;
-
-    /* top: 40%;
-    left:50%;
-    transform: translate(-50%, -50%);  */
-}
-
-.formDiv a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-/* CSS to create boxes to align next to each other
-.formBox{
-    position: relative;
-
-    margin: 15px;
-
-    height: 150px;
-    width: 150px;
-
-    border: 2px solid;
-    border-radius: 25px;
-    border-color: #39b2da;
-
-    background-color: #39b2da;
-
-    cursor: pointer;
-    transition: all 0.4s;
-}
-
-.formBox:hover{
-    transform:scale(1.10);
-}
-
-.formBox img{
-    max-width: 100%;
-
-    border: 2px solid;
-    border-radius: 25px;
-    border-color: #7a9d41;
-    background-color: transparent;
-}
-
-.formBox p{
-    margin-top: 42%;
-
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 18px;
-} */
-
-.card {
-  
-  width: 150px;
-  height: 200px;
-
-  margin: 0 50px 0 0;
-
-  /* background-color: #ffffff; */
-
-  font-size: 30px;
-  font-weight: 900;
-
-  border-radius: 15px;
-  background: #e0e0e0;
-  box-shadow:  7.5px 7.5px 30px #001c31,
-              -7.5px -7.5px 30px #001c31;
-
-  /* border-radius: 10px;
-  box-shadow: 0px 0px 10px 5px  #001c31; */
-
-  transition: all 0.5s;
-  transition-behavior: smooth; 
-}
-
-.card:hover {
-  border-radius: 15px;
-
-  /* background: white; */
-  box-shadow: 0px 0px 10px 5px  #001c31;
-
-  cursor: pointer;
-  transform: scale(1.2);
-}
-
-.first-content {
-  height: 100%;
-  width: 100%;
-  
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
+
+  background-color: #DEE1E6;
 
   border-radius: 15px;
-
-  font-size: 18px;
-  color: #001c31;
-
-  opacity: 1;
-  transition: all 1s;
-
-  /* background-color:#39b2da; */
 }
 
-.card:hover .first-content {
-  height: 0px;
-  opacity: 0;
-}
+.formBox {
+  margin: 3%;
+  padding: 0.75%;
 
-.second-content {
-  height: 0%;
-  width: 100%;
+  width: 275px; 
+  height: 400px;
 
   display: flex;
   flex-direction: column;
 
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
-  text-align: justify;
+  background: #FFFFFF; /* white */
+  border-radius: 8px;
 
-  border-radius: 15px;
+  box-shadow: 0px 4px 9px #001c31, 0px 0px 2px #001c31;
 
-  font-size: 0px;
-  opacity: 0;
-  transition: all 1s;
-  transform: rotate(90deg) scale(-1);
-
-  color: #001c31;
-  /* background-color: rgb(255, 255, 255); */
+  transition: 0.5s ease-out;
 }
 
-.second-content p{
-  margin: 15px;
+.formBox:hover {
+  transform: scale(1.1);
 }
 
-.card:hover .second-content {
-  height: 100%;
-  font-size: 0.8rem;
+.formBox img {
+  margin-top: 0%;
+  margin-bottom: 2.5%;
 
-  opacity: 1;
-  transform: rotate(0deg);
+  width: 275px;
+  height: auto;
+
+  border-radius: 8px;
+}
+
+.formBox button  {
+  padding: 2px 20px; 
+
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+
+  font-family: Inter; 
+  font-size: 18px; 
+  font-weight: 400; 
+  line-height: 28px;
+
+  color: #FFFFFF;
+  background-color: #0C3C61;
+
+  opacity: 1; 
+  border: none; 
+  border-radius: 8px;
+  transition: 0.5s ease-out;
+}
+
+.formBox button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }

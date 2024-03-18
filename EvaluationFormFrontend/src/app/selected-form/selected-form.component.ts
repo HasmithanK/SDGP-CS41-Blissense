@@ -237,10 +237,10 @@ export class SelectedFormComponent implements OnInit {
     // Update the radio buttons with the answer for the new question
     this.radioAnswer = String(this.formService.answerArray![this.currentQuestion]);
 
-    if (this.formService.answerArray[this.currentQuestion] == null) {
+    // if (this.formService.answerArray[this.currentQuestion] == null) {
       //Resetting radio buttons
       this.radioAnswer = "";
-    };
+    // };
 
     // Update navigation buttons
     this.backQue = true;

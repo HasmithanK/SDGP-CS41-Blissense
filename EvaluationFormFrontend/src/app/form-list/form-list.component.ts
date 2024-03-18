@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormService } from '../form.service';
+import { Url } from 'url';
 
 @Component({
   selector: 'app-form-list',
@@ -9,41 +10,21 @@ import { FormService } from '../form.service';
   imports: [CommonModule, RouterModule],
   template: `
     <section>
-        <!-- <div class="formDiv"> 
 
-            <a id="PHQ9" (click)="getFormNum(1)" routerLink='selectedform'>       
-                <div class="formBox">
-                    <p>PHQ-9</p>
-                </div>
-            </a>
+        <div id="formContainer">
+            <div class="formBox" *ngFor="let form of formDetailsList">
+                <p>{{form.name}}</p>
+                <img [src]="form.img" alt="add an image">
+                <p>
+                    {{form.formDescription}}
+                </p>
+                <button type="button" routerLink='selectedform' (click)="getFormNum(form.formNum)">
+                    Try it
+                </button>
+            </div>
+        </div>
 
-            <a id="GAD" (click)="getFormNum(2)" routerLink='selectedform'>
-                <div class="formBox">
-                    <p>GAD-7</p>
-                </div>
-            </a>
-
-            <a id="DASS" (click)="getFormNum(3)" routerLink='selectedform'> 
-                <div class="formBox">
-                    <p>MSI-BPD</p>
-                </div>
-            </a>
-
-            <a id="Form" (click)="getFormNum(4)" routerLink='selectedform'> 
-                <div class="formBox">
-                    <p>PANSS</p> 
-                </div>
-            </a>
-
-            <a id="Form1"> 
-                <div class="formBox" (click)="getFormNum(5)" routerLink='selectedform'>
-                    <p>Form1</p>
-                </div>
-            </a>
-        </div> -->
-
-        <div class="formContainer">
-            <div class="formBox">
+            <!-- <div class="formBox">
                 <p>name.here</p>
                 <img src="" alt="add an image">
                 <p>
@@ -54,10 +35,6 @@ import { FormService } from '../form.service';
             </div>
         </div>
 
-
-
-
-<!-- 
         <div class="formDiv">
 
             <a id="PHQ9" (click)="getFormNum(1)" routerLink='selectedform'> 
@@ -130,6 +107,25 @@ import { FormService } from '../form.service';
 })
 
 export class FormListComponent {
+
+    formDetailsList: Form[] = [
+        {name: 'PHQ-9', img: './assets/PHQ-9.jpg', 
+        formDescription: 'The content must appear here', 
+        formNum: 1 },
+
+        {name: 'GAD-7', img: './assets/GAD-7.jpg', 
+        formDescription: 'The content must appear here ' + 
+        'The content must appear here', 
+        formNum: 2 },
+
+        {name: 'MSI-BPD', img: './assets/MSI-BPD.jpg', 
+        formDescription: 'The content must appear here' +
+        'The content must appear here', 
+        formNum: 3 },
+        
+        {name: 'PANSS', img: './assets/DAD-7.jpg', formDescription: 'The content must appear here', formNum: 4 },
+        {name: 'PHQ-9', img: './assets/DAD-7.jpg', formDescription: 'The content must appear here', formNum: 5 }
+    ]
     
 
     //Injecting dependancy
@@ -141,4 +137,11 @@ export class FormListComponent {
         this.formService.formType = formType;
         console.log(this.formService.formType);
     };
+}
+
+interface Form{
+    name: string;
+    img: string;
+    formDescription: string;
+    formNum: number;
 }
