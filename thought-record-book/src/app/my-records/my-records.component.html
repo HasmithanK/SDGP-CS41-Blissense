@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Records</title>
+    <!-- Include any necessary stylesheets or scripts here -->
+</head>
+<body>
+    <header>
+        <h1>My Records</h1>
+    </header>
+
+    <main>
+        <div class="records-container">
+            <!-- Display each record here -->
+            <div class="record" *ngFor="let record of records" (click)="showDetails(record)">
+                <h2>Date: <span class="record-date">{{ record.date }}</span></h2>
+                <p><strong>Situation:</strong> <span class="record-situation">{{ record.situation }}</span></p>
+                <!-- Display other details as needed -->
+            </div>
+        </div>
+    
+        <!-- Modal for displaying record details -->
+        <div class="modal" [style.display]="showModal ? 'block' : 'none'">
+            <div class="modal-content">
+                <span class="close" (click)="closeModal()">&times;</span>
+                <h2>Record Details</h2>
+                <p>Date: <span>{{ selectedRecord.date }}</span></p>
+                <p>Situation: <span>{{ selectedRecord.situation }}</span></p>
+                <!-- Display other details as needed -->
+            </div>
+        </div>
+    </main>
+    
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="/thought-record-book">Back to Thought Record Book</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thought Record Book</title>
+</head>
+<body id="background">
+    <video autoplay muted loop id="myVideo">
+        <source src="assets\videos\bgvideo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <main>
+        <div class="container">
+          <div class="current-date-box">
+            <div class="current-date-time">{{ currentDate }}</div>
+          </div>
+            <div class="text">
+                Thought Record Book
+            </div>
+            <form action="#">
+                <div class="form-row">
+                    <div class="input-data">
+                        <input type="text" required>
+                        <div class="underline"></div>
+                        <label for="">Situation</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-data">
+                        <input type="text" required>
+                        <div class="underline"></div>
+                        <label for="">Thoughts</label>
+                    </div>
+                    <div class="input-data">
+                        <input type="text" required>
+                        <div class="underline"></div>
+                        <label for="">Feelings</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-data">
+                      <input type="text" required>
+                        <div class="underline"></div>
+                        <label for="">Actions</label>
+                        <br />
+                        <div class="form-row submit-btn">
+                            <div class="input-data">
+                                <div class="inner"></div>
+                                <input type="submit" value="submit">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <section id="entries">
+            <!-- Entries will go here -->
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a routerLink="/thought-record-book">Thought Record Book</a></li>
+                <li><a routerLink="/my-records">My Records</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
