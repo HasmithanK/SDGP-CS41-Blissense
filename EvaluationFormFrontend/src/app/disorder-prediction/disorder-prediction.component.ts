@@ -10,7 +10,10 @@ import { Component } from '@angular/core';
 
         <div id="notice">
           <p>
-            this where a description mentioning that this not real
+            Blissense is a website developed to help people 
+            understand their mental health better to  lead  a 
+            better life with the help  of our  model  specified 
+            to function in the context of mental health.
           </p>
         </div>
 

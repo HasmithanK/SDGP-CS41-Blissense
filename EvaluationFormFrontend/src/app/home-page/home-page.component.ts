@@ -46,7 +46,7 @@ import { RouterModule } from '@angular/router';
           understanding your mental health, leading to a healthier, happier you.
         </div>
 
-        <button type="button">Try it out!</button>
+        <button type="button" routerLink="predictdisorder">Try it out!</button>
       </div>
 
 
@@ -77,7 +77,7 @@ import { RouterModule } from '@angular/router';
           <button type="button">Form</button>
         </div>
 
-        <button type="button" id="formTryButton">Learn More & Try it out!</button>
+        <button type="button" id="formTryButton" routerLink='forms'>Learn More & Try it out!</button>
       
       </div>
 
@@ -117,7 +117,7 @@ import { RouterModule } from '@angular/router';
         </div>
       </div>
 
-    <div id="chatContainer">
+    <div id="chatContainer" [ngClass]="{'visible': isVisible}" class="animate">
       <div id="chatHeading">
         Connect and Unwind: <br>
         Introducing Our Relaxation Chat Platform
@@ -142,7 +142,7 @@ import { RouterModule } from '@angular/router';
 
 
 
-    <!-- <div class="footer">
+    <!-- <footer id="footer">
       <div class="column">
           <h4>About</h4>
           <ul>
@@ -174,9 +174,8 @@ import { RouterModule } from '@angular/router';
             <h4>Receive new promotions</h4>
             <input type="email" placeholder="Input your email">
             <button>Subscribe</button>
-        </div>
-
-    </div> -->
+      </div>
+    </footer> -->
 
 
 

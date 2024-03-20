@@ -367,14 +367,48 @@ button:disabled {
 
 
 
+#footer {
+    background-color: #0C3C61;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    height: 300px;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #F3F4F6;
+}
+
+.column h4, .column ul {
+    list-style-type: none;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.right-section input[type="email"] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+} 
 
 
 
 
 
 
-
-.footer {
+/* .footer {
     background-color: #333;
     color: white;
     display: flex;
@@ -400,7 +434,7 @@ button:disabled {
 .right-section input[type="email"] {
     margin-top: 10px;
     margin-bottom: 20px;
-}
+} */
 
 
 
