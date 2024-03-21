@@ -10,17 +10,19 @@ export class FormService {
   // Variables to get the right set of questions and to store the answers for the questions
   formType: number | null = null;
   answerArray: number[] = [];
-  finalResult : string = "";
+  finalResult: string = "";
+  predictedResults: any;
 
-  url = 'http://localhost:8080/api/v1/form';
+  urlBackend = 'http://localhost:8080/api/v1/form';
+  urlMLModel = 'http://localhost:5000/disorderPrediction'
 
   constructor(private http: HttpClient) {}
 
 
   // Method to get the questions from the backend
   async getQuestions() : Promise<string[]> {
-    const data = await fetch(`${this.url}/${'getEvaluationForm'}/${this.formType}`);
-    console.log(this.url + 'getEvaluationForm' + this.formType);
+    const data = await fetch(`${this.urlBackend}/${'getEvaluationForm'}/${this.formType}`);
+    console.log(this.urlBackend + 'getEvaluationForm' + this.formType);
     return await data.json() ?? [];
   }
 
@@ -29,7 +31,7 @@ export class FormService {
     try {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       const body = this.answerArray;
-      this.finalResult =  String(this.http.post<any>(`${this.url}/${'submitAnswers'}`, body, { headers }));
+      this.finalResult =  String(this.http.post<any>(`${this.urlBackend}/${'submitAnswers'}`, body, { headers }));
       console.log("\nThe program reached to submit blok");
 
     } catch(error) {
@@ -39,24 +41,35 @@ export class FormService {
   }
 
   // Method to get back the evaluated results from the backend
-
-  /*
   async evaluateAnswer() : Promise<string> {
-
-    const data = await fetch(`${this.url}/${'evaluateAnswer'}`);
-
-    console.log("\nThis is the data received from the backend: " + await data.json() ?? "");
-    
-    return await data.json() ?? "";
-  } */
-
-  async evaluateAnswer() : Promise<string> {
-    const response = await fetch(`${this.url}/evaluateAnswer`);
+    const response = await fetch(`${this.urlBackend}/evaluateAnswer`);
     const data = await response.json();
 
     console.log("\nThis is the data received from the backend: ", data);
 
     return data;
+  }
+
+  // Method to submit the user description into the model
+  async sendData(userProvidedText: string) {
+    const headers = { 'content-type': 'application/json'}  
+    const body=JSON.stringify({ userProvidedText });
+    console.log(userProvidedText);
+    
+    this.http.post('http://localhost:5000/disorderPrediction', body,{'headers':headers}).subscribe(response => {
+      console.log(response);  
+      return response;
+    }, error => {
+      console.error('There was an error during the request', error);
+    });
+  }
 }
 
+interface PredictionResults {
+  Anxiety: number;
+  BPD: number;
+  bipolar: number;
+  depression: number;
+  mentalIllness: number;
+  schizophrenia: number;
 }
