@@ -45,12 +45,16 @@ public class FormController {
         return "Success fully submitted";
     }
 
-    @GetMapping(value="/evaluateAnswer", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value="/evaluateAnswer")
     public String evaluateAnswer() {
         String finalResults;
+
         System.out.println("This method to evaluate has opened");
+
         finalResults = this.evaluationForm.evaluateAnswers();
+
         System.out.println("This is the result: " + finalResults);
-        return finalResults;
+
+        return "\"" + finalResults + "\"";
     }
 }
