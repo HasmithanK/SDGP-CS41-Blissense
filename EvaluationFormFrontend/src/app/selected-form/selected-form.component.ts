@@ -21,7 +21,7 @@ import { subscriptionLogsToBeFn } from 'rxjs/internal/testing/TestScheduler';
             <div id="questionsDivContent" *ngIf="displayQue">
                 
                 <!-- <div id="questionLabelDiv"> -->
-                    <label id="question"><b>{{question}}</b></label><br> 
+                <label id="question"><b>{{question}}</b></label><br> 
                 <!-- </div> -->
 
                 <!-- <div id="answer" *ngIf="dataLoaded">

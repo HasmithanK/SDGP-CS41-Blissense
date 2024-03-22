@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormService } from '../form.service';
-import { Url } from 'url';
 
 @Component({
   selector: 'app-form-list',
