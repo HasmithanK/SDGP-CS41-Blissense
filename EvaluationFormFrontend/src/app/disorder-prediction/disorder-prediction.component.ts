@@ -53,14 +53,4 @@ export class DisorderPredictionComponent {
     this.userProvidedText= "";
     this.router.navigate(['predictedresults']);
   }
-
-  loading = false;
-
-  startLoading() {
-    this.loading = true;
-  }
-
-  stopLoading() {
-    this.loading = false;
-  }
 }
