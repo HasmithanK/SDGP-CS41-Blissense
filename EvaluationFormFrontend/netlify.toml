@@ -1,7 +1,7 @@
 [build]
     base = "EvaluationFormFrontend"
     command = "ng build"
-    publish = "dist/evaluation-form-frontend"
+    publish = "dist/evaluation-form-frontend/browser"
 
     [[redirects]]
     from = "/*"
