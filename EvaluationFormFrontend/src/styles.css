@@ -12,7 +12,6 @@ body{
     overflow-x: hidden; /* Hide horizontal scrollbar */
 
     background-color: white;
-    /* background-image: url("//src/assets/"); */
         
     width: 100%;
     min-height: 100vh;
