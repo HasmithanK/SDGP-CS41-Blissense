@@ -19,6 +19,9 @@ import { Router } from '@angular/router';
             understand their mental health better to  lead  a 
             better life with the help  of our  model  specified 
             to function in the context of mental health.
+
+            Note: This does not provide you a conclusion. It helps you 
+            to understand your mental health.
           </p>
         </div>
 
