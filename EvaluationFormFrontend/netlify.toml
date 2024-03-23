@@ -1,9 +1,4 @@
-[build]
-    base = "EvaluationFormFrontend"
-    command = "ng build"
-    publish = "dist/evaluation-form-frontend/browser"
-
-    [[redirects]]
+[[redirects]]
     from = "/*"
     to = "/index.html"
     status = 200
