@@ -142,6 +142,7 @@ function submitMessage() {
     alreadyTyping = false;
   }
 }
+
 function reset() {
   document.querySelector("#start").classList.remove("hide");
 
@@ -162,7 +163,8 @@ function reset() {
   if (typing) {
     typing.remove();
   }
-alreadyTyping = false;
+
+  alreadyTyping = false;
 
   conversation.scrollTo(0, conversation.scrollHeight);
 }
