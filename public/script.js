@@ -162,3 +162,13 @@ function reset() {
   if (typing) {
     typing.remove();
   }
+alreadyTyping = false;
+
+  conversation.scrollTo(0, conversation.scrollHeight);
+}
+
+function htmlEncode(str) {
+  return String(str).replace(/[^\w. ]/gi, function (c) {
+    return "&#" + c.charCodeAt(0) + ";";
+  });
+}
