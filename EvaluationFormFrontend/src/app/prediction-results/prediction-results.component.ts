@@ -12,7 +12,7 @@ import { Router} from '@angular/router';
 
     <section>
 
-      <div *ngIf="isConstructorExecuted">
+      <div id="resultContainer" *ngIf="isConstructorExecuted">
         <div id="disorderResultsContainer" *ngFor="let disorder of predictionResults">
           
           <p class="rangeLabel" >{{disorder.name}} : {{disorder.rate}}%</p>
@@ -22,6 +22,19 @@ import { Router} from '@angular/router';
           </div>
 
         </div>
+      
+
+        <div id="resultsInfo">
+          <div>
+            Try out the following forms in the Evaluation form section based on the results order
+          </div>
+          <div>
+            <p>PHQ-9 for Depression</p>
+            <p>GAD-7 for Anxiety</p>
+            <p>MSI-BPD for BPD</p>
+          </div>
+        </div>
+
       </div>
   
     </section>
