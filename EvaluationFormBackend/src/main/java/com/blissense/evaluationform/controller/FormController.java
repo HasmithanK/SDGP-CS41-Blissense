@@ -57,4 +57,9 @@ public class FormController {
 
         return "\"" + finalResults + "\"";
     }
+
+    @GetMapping(value="/hello")
+    public String hello() {
+        return "Hello World";
+    }
 }
