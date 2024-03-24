@@ -1,0 +1,9 @@
+com\blissense\evaluationform\controller\FormController.class
+com\blissense\evaluationform\config\WebConfig.class
+com\blissense\evaluationform\service\implementations\GAD_7.class
+com\blissense\evaluationform\service\implementations\PHQ_9.class
+com\blissense\evaluationform\service\implementations\MSI_BPD.class
+com\blissense\evaluationform\service\implementations\PANSS.class
+com\blissense\evaluationform\EvaluationFormApplication.class
+com\blissense\evaluationform\service\EvaluationForm.class
+com\blissense\evaluationform\config\WebConfig$1.class
