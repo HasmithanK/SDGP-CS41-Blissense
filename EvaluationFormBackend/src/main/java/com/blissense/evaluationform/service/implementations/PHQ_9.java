@@ -4,9 +4,7 @@ package com.blissense.evaluationform.service.implementations;
 monitoring, and measuring the severity of depression */
 
 import com.blissense.evaluationform.service.EvaluationForm;
-import org.springframework.stereotype.Component;
 
-@Component
 public class PHQ_9 implements EvaluationForm {
 
     private final String[] questions = {
