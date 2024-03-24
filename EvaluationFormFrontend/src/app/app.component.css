@@ -85,3 +85,8 @@
     color: #0C3C61;
 	text-decoration: none;
 }
+
+#logIn a.active {
+	color: #ffffff;
+    background-color: #0C3C61;
+}
