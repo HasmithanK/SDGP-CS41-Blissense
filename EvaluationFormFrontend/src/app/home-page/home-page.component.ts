@@ -19,12 +19,11 @@ import { RouterModule } from '@angular/router';
         <div id="introHeading">Blissense</div>
         
         <div id="introBody">
-          Blissense is a website developed to help people understand 
-          their mental health better to  lead  a better life with the help  
-          of our  model  specified to function in the context of mental health
-          Blissense is a website developed to help people understand 
-          their mental health better to  lead  a better life with the help  
-          of our  model  specified to function in the context of mental health
+          Welcome to Blissense, your personal gateway to mental wellness. 
+          Our mission is to empower you with a deeper understanding of your 
+          mental health. Leveraging our specialized model, we provide insights 
+          tailored to your unique mental health context, guiding you towards a 
+          more fulfilling life.
         </div>
 
         <button type="button">Learn More</button>

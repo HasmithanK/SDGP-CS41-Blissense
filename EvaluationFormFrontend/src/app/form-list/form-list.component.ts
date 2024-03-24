@@ -32,17 +32,15 @@ export class FormListComponent {
 
     formDetailsList: Form[] = [
         {name: 'PHQ-9', img: './assets/PHQ-9.jpg', 
-        formDescription: 'The content must appear here', 
+        formDescription: 'A self-administered questionnaire used to monitor the severity of depression.', 
         formNum: 1 },
 
         {name: 'GAD-7', img: './assets/GAD-7.jpg', 
-        formDescription: 'The content must appear here ' + 
-        'The content must appear here', 
+        formDescription: 'A self-reported tool for screening and measuring the severity of generalized anxiety disorder.', 
         formNum: 2 },
 
         {name: 'MSI-BPD', img: './assets/MSI-BPD.jpg', 
-        formDescription: 'The content must appear here' +
-        'The content must appear here', 
+        formDescription: 'A self-report screening measure developed for diagnosing borderline personality disorder.', 
         formNum: 3 },
         
         // {name: 'PANSS', img: './assets/DAD-7.jpg', formDescription: 'The content must appear here', formNum: 4 },

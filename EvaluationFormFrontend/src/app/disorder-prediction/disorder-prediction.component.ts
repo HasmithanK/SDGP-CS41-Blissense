@@ -15,13 +15,12 @@ import { Router } from '@angular/router';
 
         <div id="notice">
           <p>
-            Blissense is a website developed to help people 
-            understand their mental health better to  lead  a 
-            better life with the help  of our  model  specified 
-            to function in the context of mental health.
-
-            Note: This does not provide you a conclusion. It helps you 
-            to understand your mental health.
+            Discover Blissense, your digital companion for mental health awareness. 
+            Our platform is designed to help you gain a deeper understanding of your 
+            mental health, empowering you to lead a more enriched life. With the aid of 
+            our specialized model, we provide insights within the realm of mental health. 
+            <br>
+            Please note, Blissense does not draw conclusions, but rather, it illuminates your path to self-understanding.
           </p>
         </div>
 

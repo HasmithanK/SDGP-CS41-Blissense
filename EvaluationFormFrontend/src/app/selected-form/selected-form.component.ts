@@ -156,8 +156,7 @@ export class SelectedFormComponent implements OnInit {
         { name: 'zero', label: '0', value: '0'},
         { name: 'one', label: '1', value: '1'},
         { name: 'two', label: '2', value: '2'},
-        { name: 'three', label: '3', value: '3'},
-        { name: 'four', label: '4', value: '4'}
+        { name: 'three', label: '3', value: '3'}
       ];
       console.log("Condition 2");
 
