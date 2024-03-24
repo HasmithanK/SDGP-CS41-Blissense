@@ -1,4 +1,4 @@
-FROM maven:3-openjdk-17 AS build
+FROM oraclelinux:8-slim  AS build
 COPY . .
 RUN mvn clean package -DskipTests
 
