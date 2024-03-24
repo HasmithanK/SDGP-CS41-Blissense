@@ -129,4 +129,16 @@ socket.on("endChat", (msg) => {
 
   reset();
 });
+function submitMessage() {
+  const input = document.querySelector("#text");
 
+  if (/\S/.test(input.value)) {
+    socket.emit("doneTyping");
+
+    socket.emit("newMessageToServer", input.value);
+
+    input.value = "";
+
+    alreadyTyping = false;
+  }
+}
