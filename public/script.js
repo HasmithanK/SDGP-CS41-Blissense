@@ -142,3 +142,23 @@ function submitMessage() {
     alreadyTyping = false;
   }
 }
+function reset() {
+  document.querySelector("#start").classList.remove("hide");
+
+  document.querySelector("#stop").classList.add("hide");
+
+  document.querySelector("#really").classList.add("hide");
+
+  const text = document.querySelector("#text");
+
+  text.disabled = true;
+
+  text.value = "";
+
+  document.querySelector("#send").disabled = true;
+
+  const typing = document.querySelector(".typing");
+
+  if (typing) {
+    typing.remove();
+  }
