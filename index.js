@@ -111,4 +111,33 @@ io.on("connection", async (socket) => {
     sockets.push(socket, peer);
   });
 
-  
+  socket.on("disconnecting", async () => {
+    const roomName = [...socket.rooms][1];
+
+    if (roomName) {
+      io.of("/").to(roomName).emit("goodBye", "Stranger has disconnected");
+
+      const ids = roomName.split("#");
+
+      const peerId = ids[0] === socket.id ? ids[1] : ids[0];
+
+      const peer = notAvailable.find((user) => user.id === peerId);
+
+      peer.leave(roomName);
+
+      notAvailable = notAvailable.filter((user) => user.id !== peerId);
+
+      sockets.push(peer);
+    }
+
+    sockets = sockets.filter((user) => user.id !== socket.id);
+    searching = searching.filter((user) => user.id !== socket.id);
+    notAvailable = notAvailable.filter((user) => user.id !== socket.id);
+  });
+
+  socket.on("disconnect", async () => {
+    const allSockets = await io.allSockets();
+
+    io.emit("numberOfOnline", allSockets.size);
+  });
+});
