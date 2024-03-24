@@ -1,11 +1,8 @@
-# OMEGLE CLONE
-
-### This is a clone of a sussy chatting site `Omegle`.
-
+# text chat blissense
  > Steps to setup in local environment :
  
  - Clone the repo
- - cd omegle
+ - cd textChat
  - npm install
  - npm run start 
- - Navigate to ```http://localhost:3000```
+ - Navigate to ```http://localhost:3005```
