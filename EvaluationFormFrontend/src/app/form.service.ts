@@ -12,7 +12,7 @@ export class FormService {
   evaluationfinalResult: string = "";
 
   // urlBackend = 'http://localhost:8080/api/v1/form';
-  urlBackend = 'http://blissense.onrender.com/api/v1/form';
+  urlBackend = 'https://blissense.onrender.com/api/v1/form';
   
   urlMLModel = 'http://localhost:5000/disorderPrediction';
 
