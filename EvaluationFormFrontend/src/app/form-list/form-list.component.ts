@@ -45,8 +45,8 @@ export class FormListComponent {
         'The content must appear here', 
         formNum: 3 },
         
-        {name: 'PANSS', img: './assets/DAD-7.jpg', formDescription: 'The content must appear here', formNum: 4 },
-        {name: 'PHQ-9', img: './assets/DAD-7.jpg', formDescription: 'The content must appear here', formNum: 5 }
+        // {name: 'PANSS', img: './assets/DAD-7.jpg', formDescription: 'The content must appear here', formNum: 4 },
+        // {name: 'PHQ-9', img: './assets/DAD-7.jpg', formDescription: 'The content must appear here', formNum: 5 }
     ]
     
 

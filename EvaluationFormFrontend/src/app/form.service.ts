@@ -33,7 +33,7 @@ export class FormService {
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       const body = this.answerArray;
       this.evaluationfinalResult =  String(this.http.post<any>(`${this.urlBackend}/${'submitAnswers'}`, body, { headers }));
-      console.log("\nThe program reached to submit blok");
+      console.log("\nThe program reached to submit blok" + this.answerArray);
 
     } catch(error) {
       console.error('Error submitting form:', error);

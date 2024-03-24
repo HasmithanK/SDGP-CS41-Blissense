@@ -169,7 +169,6 @@ export class SelectedFormComponent implements OnInit {
 
     } else if (this.formService.formType === 4) {
       this. options = [
-        { name: 'zero', label: '0', value: '0'},
         { name: 'one', label: '1', value: '1'},
         { name: 'two', label: '2', value: '2'},
         { name: 'three', label: '3', value: '3'},
