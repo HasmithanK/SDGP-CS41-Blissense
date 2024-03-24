@@ -133,7 +133,7 @@ import { RouterModule } from '@angular/router';
 
       <img src="./assets/VideoChat.jpg" alt="Video Chat image">
 
-      <button type="button">Start Now</button>
+      <button type="button" (click)="redirectToUrl(3)">Start Now</button>
     </div>
 
 
@@ -196,6 +196,22 @@ export class HomePageComponent {
     const positionFromTop = element.getBoundingClientRect().top;
     if (scrollPosition + window.innerHeight >= positionFromTop) {
       this.isVisible = true;
+    }
+  }
+
+  redirectToUrl(num :number) {
+    if (num == 1) {
+      window.open('https://www.example.com', '_self');
+
+    } else if(num == 2) {
+      window.open('http://40.121.158.182:3005/', '_self');
+
+    } else if(num == 3) {
+      window.open('https://www.example.com', '_self');
+
+    } else if(num == 4) {
+      window.open('https://www.example.com', '_self');
+
     }
   }
 }
