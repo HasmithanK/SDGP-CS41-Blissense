@@ -77,5 +77,38 @@ io.on("connection", async (socket) => {
 
     peer.emit("strangerIsTyping", msg);
   });
+  socket.on("doneTyping", () => {
+    const roomName = [...socket.rooms][1];
+
+    const ids = roomName.split("#");
+
+    const peerId = ids[0] === socket.id ? ids[1] : ids[0];
+
+    const peer = notAvailable.find((user) => user.id === peerId);
+
+    peer.emit("strangerIsDoneTyping");
+  });
+
+  socket.on("stop", () => {
+    const roomName = [...socket.rooms][1];
+
+    const ids = roomName.split("#");
+
+    const peerId = ids[0] === socket.id ? ids[1] : ids[0];
+
+    const peer = notAvailable.find((user) => user.id === peerId);
+
+    peer.leave(roomName);
+    socket.leave(roomName);
+
+    peer.emit("strangerDisconnected", "Stranger has disconnected");
+
+    socket.emit("endChat", "You have disconnected");
+
+    notAvailable = notAvailable.filter((user) => user.id !== socket.id);
+    notAvailable = notAvailable.filter((user) => user.id !== peer.id);
+
+    sockets.push(socket, peer);
+  });
 
   
