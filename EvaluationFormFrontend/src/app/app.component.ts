@@ -19,8 +19,9 @@ import { RouterModule } from '@angular/router';
                 <li> <a id="evaluationForm" routerLink='forms' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Evaluation Form</a> </li>
                 <li> <a id="exercises" (click)="redirectToUrl(1)" routerLink="#" routerLinkActive="active">Exercise</a> </li>
                 <li> <a id="videoChat" (click)="redirectToUrl(2)" routerLink="#" routerLinkActive="active">Chat</a> </li>
-                <li> <a id="about" (click)="redirectToUrl(3)" routerLink="#" routerLinkActive="active">About us</a> </li>
-                <li> <a id="logIn" (click)="redirectToUrl(4)">Log in</a> </li>
+                <li> <a id="book" (click)="redirectToUrl(3)" routerLink="#" routerLinkActive="active">Record Book</a> </li>
+                <li> <a id="about" (click)="redirectToUrl(4)" routerLink="#" routerLinkActive="active">About us</a> </li>
+                <li> <a id="logIn" (click)="redirectToUrl(5)">Log in</a> </li>
             </ul>
             
         </nav>
@@ -42,11 +43,13 @@ export class AppComponent {
       window.open('http://40.121.158.182:3005/', '_self');
 
     } else if(num == 3) {
-      window.open('https://www.example.com', '_self');
+      window.open('https://main--bespoke-florentine-141499.netlify.app/record-book', '_self');
 
     } else if(num == 4) {
       window.open('https://www.example.com', '_self');
-
+      
+    } else if(num == 5) {
+      window.open('https://65ff452a9c36c30008bac572--blissenselogin.netlify.app/register', '_self');
     }
   }
 }

@@ -11,8 +11,8 @@ import { Router} from '@angular/router';
   template: `
 
     <section>
-
-      <div id="resultContainer" *ngIf="isConstructorExecuted">
+<!-- isConstructorExecuted -->
+      <div id="resultContainer" *ngIf=""> 
         <div id="disorderResultsContainer" *ngFor="let disorder of predictionResults">
           
           <p class="rangeLabel" >{{disorder.name}} : {{disorder.rate}}%</p>
