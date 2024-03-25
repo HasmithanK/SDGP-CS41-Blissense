@@ -37,7 +37,7 @@ export class AppComponent {
 
   redirectToUrl(num :number) {
     if (num == 1) {
-      window.open('https://www.example.com', '_self');
+      window.open('https://6600c12bab32b249c98e19c9--frabjous-cupcake-4747f6.netlify.app', '_self');
 
     } else if(num == 2) {
       window.open('http://40.121.158.182:3005/', '_self');
