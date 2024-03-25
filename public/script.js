@@ -129,6 +129,7 @@ socket.on("endChat", (msg) => {
 
   reset();
 });
+
 function submitMessage() {
   const input = document.querySelector("#text");
 
