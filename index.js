@@ -77,6 +77,7 @@ io.on("connection", async (socket) => {
 
     peer.emit("strangerIsTyping", msg);
   });
+
   socket.on("doneTyping", () => {
     const roomName = [...socket.rooms][1];
 
