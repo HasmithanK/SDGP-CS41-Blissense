@@ -61,7 +61,7 @@ export class FormService {
     console.log(userProvidedText);
     
     try {
-      this.predictedHealthScores = await this.http.post<MentalHealthScores>('https://2fbc-124-43-246-34.ngrok-free.app/disorderPrediction', body,{'headers':headers}).toPromise();
+      this.predictedHealthScores = await this.http.post<MentalHealthScores>('https://cb9b-124-43-246-34.ngrok-free.app/disorderPrediction', body,{'headers':headers}).toPromise();
       console.log(this.predictedHealthScores);
       return this.predictedHealthScores;
     } catch (error) {
