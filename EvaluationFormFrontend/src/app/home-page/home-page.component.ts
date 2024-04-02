@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
           more fulfilling life.
         </div>
 
-        <button type="button">Learn More</button>
+        <a href="#predictContainer"> <button type="button">Learn More</button> </a>
 
       </div>
 
@@ -73,7 +73,7 @@ import { RouterModule } from '@angular/router';
           <button type="button">GAD-7</button>
           <button type="button">MSI-BPD</button>
           <button type="button">PANSS</button>
-          <button type="button">Form</button>
+          <!-- <button type="button">Form</button> -->
         </div>
 
         <button type="button" id="formTryButton" routerLink='forms'>Learn More & Try it out!</button>
@@ -206,7 +206,7 @@ export class HomePageComponent {
       window.open('http://40.121.158.182:3005/', '_self');
 
     } else if(num == 3) {
-      window.open('https://www.example.com', '_self');
+      window.open('http://52.177.134.209:3005/', '_self');
 
     } else if(num == 4) {
       window.open('https://www.example.com', '_self');

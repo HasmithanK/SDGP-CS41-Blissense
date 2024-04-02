@@ -59,6 +59,10 @@ button:disabled {
 
 }
 
+#introContainer a{
+    text-decoration: none;
+}
+
 #introHeading {
     position: relative;
 
